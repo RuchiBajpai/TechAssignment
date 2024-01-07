@@ -20,6 +20,9 @@ allure serve ./build/allure-results
 
 For my last successful run, I have placed the raw allure results at this location: `/docs/allure-results.zip` which can be viewed using allure serve command shown above.
 
+Here is the screenshot of the report:
+![img.png](docs/final_report.png)
+
 ### Issues/Gaps found while developing this assignment
 
 1. The date formats given the requirement for birth and death dates are working, so I had to adjust the date formats to make it work.
