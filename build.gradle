@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+    id 'io.freefair.lombok' version '8.3'
+}
+
+group = "com.ruchi"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(
+            'io.rest-assured:rest-assured:5.3.1',
+            'com.fasterxml.jackson.core:jackson-databind:2.15.2',
+            'com.fasterxml.jackson.core:jackson-core:2.15.2',
+            'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2',
+            'org.hamcrest:hamcrest:2.2',
+            'io.qameta.allure:allure-testng:2.24.0',
+            'io.qameta.allure:allure-rest-assured:2.24.0',
+            'mysql:mysql-connector-java:8.0.28',
+            'org.seleniumhq.selenium:selenium-java:4.16.1',
+            'io.github.bonigarcia:webdrivermanager:5.6.3'
+    )
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        // Show the results of each test (passed, skipped, or failed)
+        events 'passed', 'skipped', 'failed'
+
+        // Additionally, if you want more detailed output, you can enable these:
+         showStandardStreams = true
+         exceptionFormat = 'full' // Options: 'short', 'verbose', 'full'
+         displayGranularity = 1 // Adjust for more detailed grouping info
+    }
+}

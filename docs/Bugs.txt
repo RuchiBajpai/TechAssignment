@@ -1,0 +1,3 @@
+1. In case of erroreous recod in csv, the correct records are also not getting inserted in the DB (Violates US2 - AC4)
+2. Taxrelief file record count is not coming correct in DB, total_count is always shownas zero in DB (Violates US3 - AC4)
+In Create Hero API it is not accepting the date formats given in requirements.
