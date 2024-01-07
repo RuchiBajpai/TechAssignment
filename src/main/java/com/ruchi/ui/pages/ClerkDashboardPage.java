@@ -2,6 +2,7 @@ package com.ruchi.ui.pages;
 
 import com.ruchi.utils.SeleniumUtil;
 import io.qameta.allure.Step;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,7 +56,11 @@ public class ClerkDashboardPage {
     @Step
     public String getNotificationMessage(){
         SeleniumUtil seleniumUtil = new SeleniumUtil();
-        seleniumUtil.waitForNonEmptyText(driver,notificationBlock);
+        try {
+            seleniumUtil.waitForNonEmptyText(driver, notificationBlock);
+        }catch (StaleElementReferenceException e){
+            seleniumUtil.waitForNonEmptyText(driver, notificationBlock);
+        }
         return notificationBlock.getText();
     }
 }

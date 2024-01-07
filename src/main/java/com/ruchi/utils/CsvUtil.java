@@ -19,8 +19,8 @@ public class CsvUtil {
         String data = randonNatId + "," + randonName + ",FEMALE,2010-01-06T15:30:45,2022-01-06T15:30:45.123456789,2000,200,9";
         Allure.addAttachment("CSV Content", data);
         String filePath = System.getProperty("user.dir") + "/docs/single-hero.csv";
-
-        Files.write(Paths.get(filePath), data.getBytes(), StandardOpenOption.CREATE);
+        Files.delete(Paths.get(filePath));
+        Files.write(Paths.get(filePath), data.getBytes());
 
         return filePath;
     }

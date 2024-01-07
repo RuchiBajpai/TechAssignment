@@ -46,11 +46,14 @@ public class UserStory2Tests {
         clerkDashboardPage.uploadCsvFile(CsvUtil.getSingleRecordCSV());
         clerkDashboardPage.clickCreateButton();
         String message = clerkDashboardPage.getNotificationMessage();
-        Assertions.assertEquals("Created Successfully!", message);
-        Allure.addAttachment("CSV Upload Message", message);
 
         File screenshotFile = new File(util.takeScreenshot(driver));
         Allure.addAttachment("Message Screenshot", new FileInputStream(screenshotFile));
+
+        Assertions.assertEquals("Created Successfully!", message);
+        Allure.addAttachment("CSV Upload Message", message);
+
+
     }
 
     @Test

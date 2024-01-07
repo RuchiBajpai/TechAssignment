@@ -31,8 +31,8 @@ public class UserStory3Tests {
     }
 
     @Test
-    @DisplayName("US3:AC1 : generate a tax relief egress file")
-    public void GenerateTaxReliefEgressFileTest_UI_AC1() throws IOException {
+    @DisplayName("US3:AC1 and AC2 : generate a tax relief egress file")
+    public void GenerateTaxReliefEgressFileTest_UI_AC1_AC2() throws IOException {
         util.navigateToPage("http://localhost:9997/login");
 
         LoginPage loginPage = new LoginPage(driver);
